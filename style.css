@@ -60,6 +60,14 @@ h3 {
     text-align: left;
 }
 
+li.padding-bottom {
+    padding-bottom: 0.2em;
+}
+
+ul.circle-list {
+    list-style: circle;
+}
+
 .icon {
     padding-left: 2%;
     padding-right: 2%;
