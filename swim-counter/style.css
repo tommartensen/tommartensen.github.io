@@ -1,0 +1,20 @@
+.row {
+    padding-top: 5em;
+    font-size: 3em;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 1em;
+    width: 33%;
+    background-color: lightgray;
+    margin: .5em;
+}
+
+.clock {
+    font-size: 3em;
+    text-align: center;
+}
