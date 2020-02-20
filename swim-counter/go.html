@@ -21,6 +21,7 @@
     let curAction1 = "Swim";
     let curAction2 = "Wait";
     let curAction3 = "Wait";
+    let totalSec = 0;
 
     function pad ( val ) { return val > 9 ? val : "0" + val; }
 
@@ -139,6 +140,11 @@
             }
         }
     }, 1000);
+    setInterval(function() {
+        $("#seconds-total").html(pad(++totalSec % 60));
+        $("#minutes-total").html(pad(parseInt(totalSec/60,10)));
+        $("#hours-total").html(pad(parseInt(totalSec/3600,10)));
+    }, 1000);
 </script>
 
 </head>
@@ -177,7 +183,13 @@
         Sets: <span id="set-counter3">0</span><br/>
         Action: <span id="action-field3">Wait</span><br/>
         <div class="clock"><span id="minutes3">00</span>:<span id="seconds3">00</span></div>
-        </div>
     </div>
+</div>
+<div class="row">
+    <div class="container">
+      <div class="clock"><span id="hours-total">00</span>:<span id="minutes-total">00</span>:<span id="seconds-total">00</span></div>
+    </div>
+</div>
+
 </body>
 </html>
