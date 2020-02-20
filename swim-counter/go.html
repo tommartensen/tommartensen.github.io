@@ -15,12 +15,12 @@
     let laps1 = 0;
     let laps2 = 0;
     let laps3 = 0;
-    let lapDuration1 = 120;
+    let lapDuration1 = 150;
     let lapDuration2 = 135;
-    let lapDuration3 = 150;
+    let lapDuration3 = 120;
     let curAction1 = "Swim";
-    let curAction2 = "Swim";
-    let curAction3 = "Swim";
+    let curAction2 = "Wait";
+    let curAction3 = "Wait";
 
     function pad ( val ) { return val > 9 ? val : "0" + val; }
 
@@ -59,7 +59,7 @@
       }, 1000);
       setInterval(function() {
         // number 2
-        if (curAction2 === "Swim") {
+       if (curAction2 === "Swim") {
             $("#seconds2").html(pad(++sec2 % 60));
             $("#minutes2").html(pad(parseInt(sec2/60,10)));
         	$("#action-field2").html("Swim");
@@ -88,6 +88,14 @@
             $("#action-field2").html("Done. Upload to strava please.");
             $("#seconds2").html(pad(0));
             $("#minutes2").html(pad(0));
+        }
+        if (curAction2 === "Wait") {
+            $("#seconds2").html(pad(++sec2 % 60));
+            $("#minutes2").html(pad(parseInt(sec2/60,10)));
+            if (sec2 == 1500) {
+                curAction2 = "Swim"
+                sec2 = 0;
+            }
         }
     }, 1000);
     setInterval(function() {
@@ -122,6 +130,14 @@
             $("#seconds3").html(pad(0));
             $("#minutes3").html(pad(0));
         }
+        if (curAction3 === "Wait") {
+            $("#seconds3").html(pad(++sec3 % 60));
+            $("#minutes3").html(pad(parseInt(sec3/60,10)));
+            if (sec3 == 3000) {
+                curAction3 = "Swim"
+                sec3 = 0;
+            }
+        }
     }, 1000);
 </script>
 
@@ -139,14 +155,14 @@ Action: <span id="action-field1">Swim</span><br/>
 <div class="container">
 Laps: <span id="lap-counter2">0</span><br/>
 Sets: <span id="set-counter2">0</span><br/>
-Action: <span id="action-field2">Swim</span><br/>
+Action: <span id="action-field2">Wait</span><br/>
 <div class="clock"><span id="minutes2">00</span>:<span id="seconds2">00</span></div>
 </div>
 
 <div class="container">
     Laps: <span id="lap-counter3">0</span><br/>
     Sets: <span id="set-counter3">0</span><br/>
-    Action: <span id="action-field3">Swim</span><br/>
+    Action: <span id="action-field3">Wait</span><br/>
     <div class="clock"><span id="minutes3">00</span>:<span id="seconds3">00</span></div>
     </div>
 </div>
