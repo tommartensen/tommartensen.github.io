@@ -1,5 +1,4 @@
 .row {
-    padding-top: 5em;
     font-size: 3em;
     width: 60%;
     display: flex;
@@ -14,8 +13,14 @@
     margin: .5em;
 }
 
+.big-container {
+    padding: 1em;
+    background-color: lightgray;
+    margin: .5em;
+}
+
 .clock {
-    font-size: 3em;
+    font-size: 2.5em;
     text-align: center;
 }
 
