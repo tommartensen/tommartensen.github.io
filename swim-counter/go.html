@@ -141,9 +141,10 @@
         }
     }, 1000);
     setInterval(function() {
-        $("#seconds-total").html(pad(++totalSec % 60));
-        $("#minutes-total").html(pad(parseInt(totalSec/60,10)));
-        $("#hours-total").html(pad(parseInt(totalSec/3600,10)));
+        ++totalSec;
+        $("#seconds-total").html(pad(totalSec % 60));
+        $("#minutes-total").html(pad(parseInt(totalSec/60 % 60,10)));
+        $("#hours-total").html(pad(parseInt(totalSec/3600 % 3600,10)));
     }, 1000);
 </script>
 
