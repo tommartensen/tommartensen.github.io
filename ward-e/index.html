@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,82 +8,106 @@
   <meta name="description" content="Ward-E - Improving communication during medical ward rounds">
   <meta name="author" content="Tom Martensen; Philipp Bode">
   <title>Ward-E - Improving communication during medical ward rounds</title>
-  <link type="text/css" rel="stylesheet" href="../style.css"/>
+  <link type="text/css" rel="stylesheet" href="../style.css" />
   <script src="https://kit.fontawesome.com/8faea5c0b4.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <div class="wrapper">
     <div class="container">
       <div class="row">
-            <h1>Ward-E</h1>
-            <h3>
-              Reduce administrative work in patient examination during ward rounds and enable patients to understand procedures and outcomes based on data.
-            </h3>
-            <h3 style="margin-top: 1em"><a href="https://github.com/Philipp-Bode">Philipp Bode</a>&ThickSpace;<a href="https://github.com/tommartensen">Tom Martensen</a></h3>
+        <h1>Ward-E</h1>
+        <h3>
+          Reduce administrative work in patient examination during ward rounds and enable patients to understand
+          procedures and outcomes based on data.
+        </h3>
+        <h3 style="margin-top: 1em"><a href="https://github.com/Philipp-Bode">Philipp Bode</a>&ThickSpace;<a
+            href="https://github.com/tommartensen">Tom Martensen</a></h3>
       </div>
       <div class="row">
-          <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/zPMsOaOhaVw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/zPMsOaOhaVw" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
   <div class="wrapper">
     <div class="container" style="margin-top: 1%; text-align: left">
-        <div class="row">
-            <h1>Desirability</h1>
-            <ul class="circle-list">
-                <li class="padding-bottom"><strong>Documentation</strong> in hospitals is a mostly manual task for the care personnel</li>
-                <li class="padding-bottom">Patients and medical professionals do not share the <strong>same language</strong>, which can lead to misdiagnoses and non-adherence to therapies</li>
-                <li class="padding-bottom">Patients and supporting caregivers want to be <strong>involved</strong> in the care process</li>
-                <li class="padding-bottom">Health care providers want to make <strong>informed decisions</strong></li>
-            </ul>
-        </div>
-        <div class="row">
-            <h1>Viability</h1>
-            <ul class="circle-list">
-                <li><strong>Misdiagnoses</strong> affect up to <em>12 million Americans/annum</em>, half of those can be considered <strong>harmful</strong> <a class="source" href="#sources">[1]</a></li>
-                <li><strong>Unneccesary tests and procedures</strong> create costs of up to <em>700 billion dollars/annum</em> <a class="source" href="#sources">[2]</a></li>
-                <li><strong>Low treatment adherence</strong> leads to follow-up costs of up to <em>300 billion dollars/annum</em> <a class="source" href="#sources">[3]</a></li>
-            </ul>
-        </div>
-        <div class="row">
-            <h1>Feasibility</h1>
-            <ul class="circle-list">
-                <li>
-                    Given advancement in <strong>personal assistants</strong> such as Siri, Alexa or Google Home, we consider speech-to-text a solved problem.
-                    However, such language models may have to be <strong>re-trained for medical purposes</strong>.
-                    We propose a semi-supervised approach here.
-                </li>
-                <li>
-                    <strong>Named-Entity recognition</strong> in particular in the medical field is the topic of ongoing research.
-                    However, as hyperscalers such as <a href="https://docs.aws.amazon.com/en_us/comprehend/latest/dg/comprehend-med.html" target="_blank">AWS</a> tap into the field of natural language processing for medical texts, productive systems seem to be on the horizon.
-                </li>
-                <li>
-                    Any solution must have an <strong>interface to the clinical information system</strong> used at the hospital to insert and retrieve information.
-                    While there is a multide of different vendors, <strong>co-innovating</strong> with one of them may pioneer the solution.
-                </li>
-            </ul>
-        </div>
-        <div class="row">
-            <h1>Reservations</h1>
-            <ul class="circle-list">
-                <li>How will practitioner react to the automated documentation? <strong>Will they feel controlled</strong> or will they see the benefits on patient outcomes?</li>
-                <li>What kind of <strong>medical content</strong> is relevant for the patients and how can it be created?</li>
-                <li>What about <strong>data privacy and security</strong> concerns?</li>
-
-    </div>
-  </div>
-  <div class="wrapper">
-        <div class="container" style="margin-top: 1%; text-align: left">
-          <div class="row">
-            <a id="sources"></a>
-            <h3>Sources</h3>
-            <ol>
-                <li><em>Singh H, Meyer and Thomas EJ.</em> The frequency of diagnostic errors in outpatient care: estimations from three large observational studies involving US adult populations. BMJ Quality & Safety 2014; 23:727-731.</li>
-                <li><em>American College of Physicians.</em> Controlling Health Care Costs While Promoting The Best Possible Health Outcomes. Philadelphia: American College of Physicians; 2009: PolicyMonograph. Available from American College of Physicians, 190 N. Independence Mall West, Philadelphia, PA 19106.</li>
-                <li><em>New England Healthcare Institute.</em> Thinking outside the pillbox: a system-wide approach to improving patient medication adherence for chronic disease. New England Health Care Institute; 2009.</li>
-            </ol>
-          </div>
+      <div class="row">
+        <h1>Desirability</h1>
+        <ul class="circle-list">
+          <li class="padding-bottom"><strong>Documentation</strong> in hospitals is a mostly manual task for the care
+            personnel</li>
+          <li class="padding-bottom">Patients and medical professionals do not share the <strong>same language</strong>,
+            which can lead to misdiagnoses and non-adherence to therapies</li>
+          <li class="padding-bottom">Patients and supporting caregivers want to be <strong>involved</strong> in the care
+            process</li>
+          <li class="padding-bottom">Health care providers want to make <strong>informed decisions</strong></li>
+        </ul>
       </div>
-  </div>
+      <div class="row">
+        <h1>Viability</h1>
+        <ul class="circle-list">
+          <li><strong>Misdiagnoses</strong> affect up to <em>12 million Americans/annum</em>, half of those can be
+            considered <strong>harmful</strong> <a class="source" href="#sources">[1]</a></li>
+          <li><strong>Unneccesary tests and procedures</strong> create costs of up to <em>700 billion dollars/annum</em>
+            <a class="source" href="#sources">[2]</a></li>
+          <li><strong>Low treatment adherence</strong> leads to follow-up costs of up to <em>300 billion
+              dollars/annum</em> <a class="source" href="#sources">[3]</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <h1>Feasibility</h1>
+        <ul class="circle-list">
+          <li>
+            Given advancement in <strong>personal assistants</strong> such as Siri, Alexa or Google Home, we consider
+            speech-to-text a solved problem.
+            However, such language models may have to be <strong>re-trained for medical purposes</strong>.
+            We propose a semi-supervised approach here.
+          </li>
+          <li>
+            <strong>Named-Entity recognition</strong> in particular in the medical field is the topic of ongoing
+            research.
+            However, as hyperscalers such as <a
+              href="https://docs.aws.amazon.com/en_us/comprehend/latest/dg/comprehend-med.html" target="_blank">AWS</a>
+            tap into the field of natural language processing for medical texts, productive systems seem to be on the
+            horizon.
+          </li>
+          <li>
+            Any solution must have an <strong>interface to the clinical information system</strong> used at the hospital
+            to insert and retrieve information.
+            While there is a multide of different vendors, <strong>co-innovating</strong> with one of them may pioneer
+            the solution.
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <h1>Reservations</h1>
+        <ul class="circle-list">
+          <li>How will practitioner react to the automated documentation? <strong>Will they feel controlled</strong> or
+            will they see the benefits on patient outcomes?</li>
+          <li>What kind of <strong>medical content</strong> is relevant for the patients and how can it be created?</li>
+          <li>What about <strong>data privacy and security</strong> concerns?</li>
+
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="container" style="margin-top: 1%; text-align: left">
+        <div class="row">
+          <a id="sources"></a>
+          <h3>Sources</h3>
+          <ol>
+            <li><em>Singh H, Meyer and Thomas EJ.</em> The frequency of diagnostic errors in outpatient care:
+              estimations from three large observational studies involving US adult populations. BMJ Quality & Safety
+              2014; 23:727-731.</li>
+            <li><em>American College of Physicians.</em> Controlling Health Care Costs While Promoting The Best Possible
+              Health Outcomes. Philadelphia: American College of Physicians; 2009: PolicyMonograph. Available from
+              American College of Physicians, 190 N. Independence Mall West, Philadelphia, PA 19106.</li>
+            <li><em>New England Healthcare Institute.</em> Thinking outside the pillbox: a system-wide approach to
+              improving patient medication adherence for chronic disease. New England Health Care Institute; 2009.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
 </body>
+
 </html>

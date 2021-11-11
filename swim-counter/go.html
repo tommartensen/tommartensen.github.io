@@ -1,199 +1,202 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8"/>
-<link type="text/css" rel="stylesheet" href="style.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-    const pauseDuration = 300;
-    const lapsPerSet = 25;
-    const totalLaps = 100;
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        const pauseDuration = 300;
+        const lapsPerSet = 25;
+        const totalLaps = 100;
 
-    let sec1 = 0;
-    let sec2 = 0;
-    let sec3 = 0;
-    let laps1 = 0;
-    let laps2 = 0;
-    let laps3 = 0;
-    let lapDuration1 = 150;
-    let lapDuration2 = 135;
-    let lapDuration3 = 120;
-    let curAction1 = "Swim";
-    let curAction2 = "Wait";
-    let curAction3 = "Wait";
-    let totalSec = 0;
+        let sec1 = 0;
+        let sec2 = 0;
+        let sec3 = 0;
+        let laps1 = 0;
+        let laps2 = 0;
+        let laps3 = 0;
+        let lapDuration1 = 150;
+        let lapDuration2 = 135;
+        let lapDuration3 = 120;
+        let curAction1 = "Swim";
+        let curAction2 = "Wait";
+        let curAction3 = "Wait";
+        let totalSec = 0;
 
-    function pad ( val ) { return val > 9 ? val : "0" + val; }
+        function pad(val) { return val > 9 ? val : "0" + val; }
 
-    setInterval( function() {
-    	// number 1
-        sec1++;
-        if (curAction1 === "Swim") {
-            $("#seconds1").html(pad(sec1 % 60));
-            $("#minutes1").html(pad(parseInt(sec1/60,10)));
-        	$("#action-field1").html("Swim");
-        	if (sec1 % lapDuration1 == 0) {
-                $("#lap-counter1").html(++laps1);
-                sec1 = 0;
-                if (laps1 % lapsPerSet == 0) {
-                    $("#set-counter1").html(laps1 / lapsPerSet);
-                    curAction1 = "Pause";
-                }
-                if (laps1 % totalLaps == 0) {
-                    curAction1 = "End";
-                }
-            }
-        }
-        if (curAction1 === "Pause") {
-            $("#seconds1").html(pad(sec1 % 60));
-            $("#minutes1").html(pad(parseInt(sec1/60,10)));
-            $("#action-field1").html("Pause");
-            if (sec1 === pauseDuration) {
-                curAction1 = "Swim";
-                sec1 = 0;
-            }
-        }
-        if (curAction1 === "End") {
-            $("#action-field1").html("Done. Upload to strava please.");
-            $("#seconds1").html(pad(0));
-            $("#minutes1").html(pad(0));
-        }
-      }, 1000);
-      setInterval(function() {
-        // number 2
-        sec2++;
-        if (curAction2 === "Swim") {
-            $("#seconds2").html(pad(sec2 % 60));
-            $("#minutes2").html(pad(parseInt(sec2/60,10)));
-        	$("#action-field2").html("Swim");
-        	if (sec2 % lapDuration2 == 0) {
-                $("#lap-counter2").html(++laps2);
-                sec2 = 0;
-                if (laps2 % lapsPerSet == 0) {
-                    $("#set-counter2").html(laps2 / lapsPerSet);
-                    curAction2 = "Pause";
-                }
-                if (laps2 % totalLaps == 0) {
-                    curAction2 = "End";
+        setInterval(function () {
+            // number 1
+            sec1++;
+            if (curAction1 === "Swim") {
+                $("#seconds1").html(pad(sec1 % 60));
+                $("#minutes1").html(pad(parseInt(sec1 / 60, 10)));
+                $("#action-field1").html("Swim");
+                if (sec1 % lapDuration1 == 0) {
+                    $("#lap-counter1").html(++laps1);
+                    sec1 = 0;
+                    if (laps1 % lapsPerSet == 0) {
+                        $("#set-counter1").html(laps1 / lapsPerSet);
+                        curAction1 = "Pause";
+                    }
+                    if (laps1 % totalLaps == 0) {
+                        curAction1 = "End";
+                    }
                 }
             }
-        }
-        if (curAction2 === "Pause") {
-            $("#seconds2").html(pad(sec2 % 60));
-            $("#minutes2").html(pad(parseInt(sec2/60,10)));
-            $("#action-field2").html("Pause");
-            if (sec2 === pauseDuration) {
-                curAction2 = "Swim";
-                sec2 = 0;
-            }
-        }
-        if (curAction2 === "End") {
-            $("#action-field2").html("Done. Upload to strava please.");
-            $("#seconds2").html(pad(0));
-            $("#minutes2").html(pad(0));
-        }
-        if (curAction2 === "Wait") {
-            $("#seconds2").html(pad(sec2 % 60));
-            $("#minutes2").html(pad(parseInt(sec2/60,10)));
-            if (sec2 == 1500) {
-                curAction2 = "Swim"
-                sec2 = 0;
-            }
-        }
-    }, 1000);
-    setInterval(function() {
-        // number 3
-        sec3++;
-        if (curAction3 === "Swim") {
-            $("#seconds3").html(pad(sec3 % 60));
-            $("#minutes3").html(pad(parseInt(sec3/60,10)));
-        	$("#action-field3").html("Swim");
-        	if (sec3 % lapDuration3 == 0) {
-                $("#lap-counter3").html(++laps3);
-                sec3 = 0;
-                if (laps3 % lapsPerSet == 0) {
-                    $("#set-counter3").html(laps3 / lapsPerSet);
-                    curAction3 = "Pause";
-                }
-                if (laps3 % totalLaps == 0) {
-                    curAction3 = "End";
+            if (curAction1 === "Pause") {
+                $("#seconds1").html(pad(sec1 % 60));
+                $("#minutes1").html(pad(parseInt(sec1 / 60, 10)));
+                $("#action-field1").html("Pause");
+                if (sec1 === pauseDuration) {
+                    curAction1 = "Swim";
+                    sec1 = 0;
                 }
             }
-        }
-        if (curAction3 === "Pause") {
-            $("#seconds3").html(pad(sec3 % 60));
-            $("#minutes3").html(pad(parseInt(sec3/60,10)));
-            $("#action-field3").html("Pause");
-            if (sec3 === pauseDuration) {
-                curAction3 = "Swim";
-                sec3 = 0;
+            if (curAction1 === "End") {
+                $("#action-field1").html("Done. Upload to strava please.");
+                $("#seconds1").html(pad(0));
+                $("#minutes1").html(pad(0));
             }
-        }
-        if (curAction3 === "End") {
-            $("#action-field3").html("Done. Upload to strava please.");
-            $("#seconds3").html(pad(0));
-            $("#minutes3").html(pad(0));
-        }
-        if (curAction3 === "Wait") {
-            $("#seconds3").html(pad(sec3 % 60));
-            $("#minutes3").html(pad(parseInt(sec3/60,10)));
-            if (sec3 == 3000) {
-                curAction3 = "Swim"
-                sec3 = 0;
+        }, 1000);
+        setInterval(function () {
+            // number 2
+            sec2++;
+            if (curAction2 === "Swim") {
+                $("#seconds2").html(pad(sec2 % 60));
+                $("#minutes2").html(pad(parseInt(sec2 / 60, 10)));
+                $("#action-field2").html("Swim");
+                if (sec2 % lapDuration2 == 0) {
+                    $("#lap-counter2").html(++laps2);
+                    sec2 = 0;
+                    if (laps2 % lapsPerSet == 0) {
+                        $("#set-counter2").html(laps2 / lapsPerSet);
+                        curAction2 = "Pause";
+                    }
+                    if (laps2 % totalLaps == 0) {
+                        curAction2 = "End";
+                    }
+                }
             }
-        }
-    }, 1000);
-    setInterval(function() {
-        ++totalSec;
-        $("#seconds-total").html(pad(totalSec % 60));
-        $("#minutes-total").html(pad(parseInt(totalSec/60 % 60,10)));
-        $("#hours-total").html(pad(parseInt(totalSec/3600 % 3600,10)));
-    }, 1000);
-</script>
+            if (curAction2 === "Pause") {
+                $("#seconds2").html(pad(sec2 % 60));
+                $("#minutes2").html(pad(parseInt(sec2 / 60, 10)));
+                $("#action-field2").html("Pause");
+                if (sec2 === pauseDuration) {
+                    curAction2 = "Swim";
+                    sec2 = 0;
+                }
+            }
+            if (curAction2 === "End") {
+                $("#action-field2").html("Done. Upload to strava please.");
+                $("#seconds2").html(pad(0));
+                $("#minutes2").html(pad(0));
+            }
+            if (curAction2 === "Wait") {
+                $("#seconds2").html(pad(sec2 % 60));
+                $("#minutes2").html(pad(parseInt(sec2 / 60, 10)));
+                if (sec2 == 1500) {
+                    curAction2 = "Swim"
+                    sec2 = 0;
+                }
+            }
+        }, 1000);
+        setInterval(function () {
+            // number 3
+            sec3++;
+            if (curAction3 === "Swim") {
+                $("#seconds3").html(pad(sec3 % 60));
+                $("#minutes3").html(pad(parseInt(sec3 / 60, 10)));
+                $("#action-field3").html("Swim");
+                if (sec3 % lapDuration3 == 0) {
+                    $("#lap-counter3").html(++laps3);
+                    sec3 = 0;
+                    if (laps3 % lapsPerSet == 0) {
+                        $("#set-counter3").html(laps3 / lapsPerSet);
+                        curAction3 = "Pause";
+                    }
+                    if (laps3 % totalLaps == 0) {
+                        curAction3 = "End";
+                    }
+                }
+            }
+            if (curAction3 === "Pause") {
+                $("#seconds3").html(pad(sec3 % 60));
+                $("#minutes3").html(pad(parseInt(sec3 / 60, 10)));
+                $("#action-field3").html("Pause");
+                if (sec3 === pauseDuration) {
+                    curAction3 = "Swim";
+                    sec3 = 0;
+                }
+            }
+            if (curAction3 === "End") {
+                $("#action-field3").html("Done. Upload to strava please.");
+                $("#seconds3").html(pad(0));
+                $("#minutes3").html(pad(0));
+            }
+            if (curAction3 === "Wait") {
+                $("#seconds3").html(pad(sec3 % 60));
+                $("#minutes3").html(pad(parseInt(sec3 / 60, 10)));
+                if (sec3 == 3000) {
+                    curAction3 = "Swim"
+                    sec3 = 0;
+                }
+            }
+        }, 1000);
+        setInterval(function () {
+            ++totalSec;
+            $("#seconds-total").html(pad(totalSec % 60));
+            $("#minutes-total").html(pad(parseInt(totalSec / 60 % 60, 10)));
+            $("#hours-total").html(pad(parseInt(totalSec / 3600 % 3600, 10)));
+        }, 1000);
+    </script>
 
 </head>
 
 <body>
-<div class="row">
-<div class="container">
-<div class="clock">2:30</div>
-</div>
+    <div class="row">
+        <div class="container">
+            <div class="clock">2:30</div>
+        </div>
 
-<div class="container">
-<div class="clock">2:15</div>
-</div>
+        <div class="container">
+            <div class="clock">2:15</div>
+        </div>
 
-<div class="container">
-<div class="clock">2:00</div>
-</div>
-</div>
-<div class="row">
-    <div class="container">
-    Laps: <span id="lap-counter1">0</span><br/>
-    Sets: <span id="set-counter1">0</span><br/>
-    Action: <span id="action-field1">Swim</span><br/>
-    <div class="clock"><span id="minutes1">00</span>:<span id="seconds1">00</span></div>
+        <div class="container">
+            <div class="clock">2:00</div>
+        </div>
     </div>
+    <div class="row">
+        <div class="container">
+            Laps: <span id="lap-counter1">0</span><br />
+            Sets: <span id="set-counter1">0</span><br />
+            Action: <span id="action-field1">Swim</span><br />
+            <div class="clock"><span id="minutes1">00</span>:<span id="seconds1">00</span></div>
+        </div>
 
-    <div class="container">
-    Laps: <span id="lap-counter2">0</span><br/>
-    Sets: <span id="set-counter2">0</span><br/>
-    Action: <span id="action-field2">Wait</span><br/>
-    <div class="clock"><span id="minutes2">00</span>:<span id="seconds2">00</span></div>
-    </div>
+        <div class="container">
+            Laps: <span id="lap-counter2">0</span><br />
+            Sets: <span id="set-counter2">0</span><br />
+            Action: <span id="action-field2">Wait</span><br />
+            <div class="clock"><span id="minutes2">00</span>:<span id="seconds2">00</span></div>
+        </div>
 
-    <div class="container">
-        Laps: <span id="lap-counter3">0</span><br/>
-        Sets: <span id="set-counter3">0</span><br/>
-        Action: <span id="action-field3">Wait</span><br/>
-        <div class="clock"><span id="minutes3">00</span>:<span id="seconds3">00</span></div>
+        <div class="container">
+            Laps: <span id="lap-counter3">0</span><br />
+            Sets: <span id="set-counter3">0</span><br />
+            Action: <span id="action-field3">Wait</span><br />
+            <div class="clock"><span id="minutes3">00</span>:<span id="seconds3">00</span></div>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="big-container">
-      <div class="clock"><span id="hours-total">00</span>:<span id="minutes-total">00</span>:<span id="seconds-total">00</span></div>
+    <div class="row">
+        <div class="big-container">
+            <div class="clock"><span id="hours-total">00</span>:<span id="minutes-total">00</span>:<span
+                    id="seconds-total">00</span></div>
+        </div>
     </div>
-</div>
 
 </body>
+
 </html>
